@@ -74,6 +74,8 @@ async def song(update: Update, context: ContextTypes.DEFAULT_TYPE):
         }],
         'outtmpl': 'downloads/%(title)s.%(ext)s',
         'quiet': True,
+    'cookiefile': 'cookies.txt',
+
     }
 
     file_path = None
