@@ -5,7 +5,12 @@ import threading
 from flask import Flask
 from telegram import Update, ChatPermissions
 from telegram.ext import Application, CommandHandler, ContextTypes
-import yt_dlp
+import yt_dlp 
+ydl_opts = {
+    'format': 'bestaudio/best',
+    'cookiefile': 'cookies.txt',
+}
+
 
 # ==================== 1. FLASK WEB SERVER (Render Keep-Alive) ====================
 app = Flask(__name__)
