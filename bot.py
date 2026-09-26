@@ -81,7 +81,7 @@ async def song(update: Update, context: ContextTypes.DEFAULT_TYPE):
         'sleep_interval': 3,
         'max_sleep_interval': 6,
         'sleep_requests': 1,
-        'cookiefile': 'cookies.txt',
+     
     }
 
         
