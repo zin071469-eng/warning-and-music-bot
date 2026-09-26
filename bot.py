@@ -65,16 +65,27 @@ async def song(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     msg = await update.message.reply_text(f"🔎 **{query}** ကို ရှာဖွေနေပါသည်။ ခဏစောင့်ပေးပါ...")
 
-    ydl_opts = {
-        'format': 'bestaudio/best',
+        ydl_opts = {  
+       'format': 'bestaudio/best',
+        'noplaylist': True,
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
             'preferredquality': '192',
         }],
-        'outtmpl': 'downloads/%(title)s.%(ext)s',
+        'outtmpl': 'downloads/%(id)s.%(ext)s',
         'quiet': True,
-    'cookiefile': 'cookies.txt',
+        'no_warnings': True,
+        'retries': 2,
+        'fragment_retries': 2,
+        'sleep_interval': 3,
+        'max_sleep_interval': 6,
+        'sleep_requests': 1,
+        'cookiefile': 'cookies.txt',
+    }
+
+        
+    
 
     }
 
